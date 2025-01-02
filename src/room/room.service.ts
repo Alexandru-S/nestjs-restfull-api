@@ -24,7 +24,10 @@ export class RoomService {
   }
 
   update(id: number, updateRoomDto: UpdateRoomDto) {
-    return `This action updates a #${id} room`;
+    return this.prisma.room.update({
+      where: { id },
+      data: updateRoomDto,
+    });
   }
 
   remove(id: number) {

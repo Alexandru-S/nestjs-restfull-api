@@ -24,7 +24,10 @@ export class HotelService {
   }
 
   update(id: number, updateHotelDto: UpdateHotelDto) {
-    return `This action updates a #${id} hotel`;
+    return this.prisma.hotel.update({
+      where: { id },
+      data: updateHotelDto,
+    });
   }
 
   remove(id: number) {
