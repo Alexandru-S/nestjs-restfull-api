@@ -8,7 +8,9 @@ export class HotelService {
   constructor(private readonly prisma: PrismaService) {}
 
   create(createHotelDto: CreateHotelDto) {
-    return 'This action adds a new hotel';
+    return this.prisma.hotel.create({
+      data: createHotelDto,
+    });
   }
 
   findAll() {
