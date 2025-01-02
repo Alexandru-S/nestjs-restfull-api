@@ -8,7 +8,9 @@ export class RoomService {
   constructor(private readonly prisma: PrismaService) {}
 
   create(createRoomDto: CreateRoomDto) {
-    return 'This action adds a new room';
+    return this.prisma.room.create({
+      data: createRoomDto,
+    });
   }
 
   findAll() {

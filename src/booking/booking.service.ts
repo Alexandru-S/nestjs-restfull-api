@@ -8,7 +8,9 @@ export class BookingService {
   constructor(private readonly prisma: PrismaService) {}
 
   create(createBookingDto: CreateBookingDto) {
-    return 'This action adds a new booking';
+    return this.prisma.booking.create({
+      data: createBookingDto,
+    });
   }
 
   findAll() {
