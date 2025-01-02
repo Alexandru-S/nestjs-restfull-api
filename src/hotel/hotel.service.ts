@@ -12,7 +12,7 @@ export class HotelService {
   }
 
   findAll() {
-    return `This action returns all hotel`;
+    return this.prisma.hotel.findMany();
   }
 
   findOne(id: number) {

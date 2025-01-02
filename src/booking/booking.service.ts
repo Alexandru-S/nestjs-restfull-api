@@ -12,7 +12,7 @@ export class BookingService {
   }
 
   findAll() {
-    return `This action returns all booking`;
+    return this.prisma.booking.findMany();
   }
 
   findOne(id: number) {
