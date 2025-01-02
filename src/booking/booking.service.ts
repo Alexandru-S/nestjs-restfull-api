@@ -16,7 +16,9 @@ export class BookingService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} booking`;
+    return this.prisma.booking.findUnique({
+      where: { id },
+    });
   }
 
   update(id: number, updateBookingDto: UpdateBookingDto) {
