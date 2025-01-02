@@ -30,7 +30,9 @@ export class HotelService {
     });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} hotel`;
+  async remove(id: number) {
+    return await this.prisma.hotel.delete({
+      where: { id },
+    });
   }
 }

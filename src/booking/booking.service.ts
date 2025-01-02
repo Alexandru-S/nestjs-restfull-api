@@ -30,7 +30,9 @@ export class BookingService {
     });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} booking`;
+  async remove(id: number) {
+    return await this.prisma.booking.delete({
+      where: { id },
+    });
   }
 }
