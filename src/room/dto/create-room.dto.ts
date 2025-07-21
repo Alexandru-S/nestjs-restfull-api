@@ -7,7 +7,9 @@ export class CreateRoomDto {
   @IsNumber()
   number: number;
 
-  @ApiProperty({ description: 'The type of the room (e.g., Single, Double, Suite)' })
+  @ApiProperty({
+    description: 'The type of the room (e.g., Single, Double, Suite)',
+  })
   @IsNotEmpty()
   @IsString()
   type: string;
