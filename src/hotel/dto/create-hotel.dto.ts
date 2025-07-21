@@ -7,7 +7,10 @@ export class CreateHotelDto {
   @IsString()
   name: string;
 
-  @ApiProperty({ description: 'A brief description of the hotel', required: false })
+  @ApiProperty({
+    description: 'A brief description of the hotel',
+    required: false,
+  })
   @IsOptional()
   @IsString()
   description?: string;
